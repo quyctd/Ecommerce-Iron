@@ -14,3 +14,4 @@ whitenoise==3.3.1
 youtube-dl==2017.12.31
 Markdown
 gunicorn
+https://github.com/darklow/django-suit/tarball/v2
