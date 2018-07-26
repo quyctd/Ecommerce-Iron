@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["tongkhogiare.herokuapp.com","127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    'cms.apps.SuitConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,7 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT =  "cms/static"#os.path.join(BASE_DIR, "cms/static")
+STATIC_ROOT =  os.path.join(BASE_DIR, "cms/static")#"cms/static"
 LOGIN_REDIRECT_URL = '/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
