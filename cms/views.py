@@ -1,9 +1,13 @@
 from django.shortcuts import render
-
+from cms.models import Product
 # Create your views here.
 
 def homepage(request):
-    return render(request, "index.html")
+    products = Product.objects.all()
+    context = {
+        "products" : products,
+    }
+    return render(request, "home-02.html", context = context)
 
 def product(request):
     return render(request, 'product.html')
@@ -13,22 +17,9 @@ def cart(request):
 
 def about(request):
     return render(request, "about.html")
-    
-def blog(request):
-    return render(request, "blog.html")
-    
-def blog_detail(request):
-    return render(request, "blog-detail.html")
 
 def contact(request):
     return render(request, "contact.html")
-
-def home_2(request):
-    return render(request, "home-02.html")
-    
-def home_3(request):
-    return render(request, "home-03.html")
-
 
 def product_detail(request):
     return render(request, "product-detail.html")

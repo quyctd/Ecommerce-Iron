@@ -24,11 +24,7 @@ urlpatterns = [
     path('product/', views.product, name='product'),
     path('cart/', views.cart, name='cart'),
     path('about/', views.about, name='about'),
-    path('blog/', views.blog, name='blog'),
-    path('blog-detail/', views.blog_detail, name='blog_detail'),
     path('contact/', views.contact, name='contact'),
-    path('home-02/', views.home_2, name='home_2'),
-    path('home-03/', views.home_3, name='home_3'),
     path('product-detail/', views.product_detail, name='product_detail'),
 
 ]
