@@ -12,3 +12,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(Url)
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Color_product)

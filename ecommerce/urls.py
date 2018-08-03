@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from cms import views
-from django.conf.urls import include
+from django.conf.urls import include, url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('cart/', views.cart, name='cart'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
+    url(r'^sendmail/$', views.sending_mail, name='sendmail'),
     path('product-detail/<int:pk>/', views.product_detail, name='product_detail'),
 
 ]

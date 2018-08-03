@@ -127,3 +127,9 @@ STATIC_ROOT =  os.path.join(BASE_DIR, "cms/static")#"cms/static"
 LOGIN_REDIRECT_URL = '/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'fashe-web'
+EMAIL_HOST_PASSWORD = 'Quy_CVP98'
+EMAIL_USE_TLS = True

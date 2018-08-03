@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	<script type="text/javascript" src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        $("#id_username").change(function () {
+            //console.log("Hi");
+            //console.log( $(this).val() );
+            alert( "Handler for .change() called." );
+        });
+    </script>
+<body>
+        
+        <form method='post'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign up</button>
+           
+        </form>
+        <script>
+            $("#id_username").change(function () {
+                var username = $(this).val();
+            
+                $.ajax({
+                    url: '/ajax/validate_username/',
+                    data: {
+                    'username': username
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                    if (data.is_taken) {
+                        alert("A user with this username already exists.");
+                    }
+                    }
+                });
+            
+                });
+        </script>
+</body>
+</html>
